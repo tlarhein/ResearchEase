@@ -9,7 +9,7 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion = '1.5.1.RELEASE'}}"
 		)
 	}
-
+//plugin contains an error with 'id'//
 	plugins {
 		id 'java'
 		apply plugin: 'org.springframework.boot'
