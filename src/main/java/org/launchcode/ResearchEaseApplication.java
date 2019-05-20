@@ -1,8 +1,10 @@
 package org.launchcode;
-//Program by Tracey Cannon, LaunchCode Liftoff//
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+//Program by Tracey Cannon, LaunchCode Liftoff//
 
 
 @SpringBootApplication

@@ -9,33 +9,28 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion = '1.5.1.RELEASE'}}"
 		)
 	}
-//plugin contains an error with 'id'//
-	plugins {
-		id 'java'
-		apply plugin: 'org.springframework.boot'
-		apply plugin: 'java'
-		apply plugin: 'eclipse'
-	}
 
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
 
-	jar {
-		baseName = 'hello-spring'
-		version = '0.0.1-SNAPSHOT'
-	}
-
-
-	group = 'org.launchcode'
-	version = '0.0.1-SNAPSHOT'
-	sourceCompatibility = '1.8'
-
-	repositories {
-		mavenCentral()
-	}
-
-	dependencies {
-		compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-		compile('org.springframework.boot:spring-boot-starter-web')
-		runtime('org.springframework.boot:spring-boot-devtools')
-		testCompile('org.springframework.boot:spring-boot-starter-test')
-	}
 }
+jar {
+	baseName = 'research-ease'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+group = 'org.launchcode'
+	
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	runtime('org.springframework.boot:spring-boot-devtools')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+	
