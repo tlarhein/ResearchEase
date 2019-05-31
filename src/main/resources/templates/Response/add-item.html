@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+
+</head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+<br/>
+
+<div class="container body-content">
+
+    <form th:object="${form}" method="post" action="/response/add-item" style="max-width:600px;" >
+        <div class="form-group">
+            <label th:for="instrumentId">Instrument</label>
+            <select name="instrumentId">
+                <option th:each="instrument : *{instruments}"
+                        th:value="${instrument.id}"
+                        th:text="${instrument.name}"></option>
+            </select>
+
+            <input type="hidden" name="responseId" th:value="*{response.id}" />
+
+
+        </div>
+
+        <input type="submit" value="Add" />
+
+
+
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+
+<body class="container body-content">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${instruments} and ${instruments.size()}"> No Instruments Yet</p>
+
+<table class="table">
+
+    <tr>
+        <th>Project</th>
+        <th>Instrument Name</th>
+        <th>Instrument Description</th>
+
+
+    </tr>
+
+
+
+    <tr th:each="instrument : ${instruments}">
+        <td th:text="${instrument.name}"></td>
+        <td th:text="${instrument.description}"></td>
+        <td th:text="${instrument.project.name}"></td>
+    </tr>
+
+</table>
+
+<nav>
+    <a href="/instrument/add">Add</a> |
+    <a href="/instrument/remove">Remove</a>
+</nav>
+
+</body>
+</html>

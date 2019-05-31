@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${instruments} and ${instruments.size()}">You haven't added any research instruments yet!</p>
+
+<form method="post">
+
+    <div th:each="instrument : ${instruments}" class="checkbox">
+        <input type="checkbox" name="instrumentIds" th:value="${instrument.id}" th:id="${instrument.id}"/>
+        <label th:for="${instrument.id}" th:text="${instrument.name}"></label>
+        <br />
+    </div>
+
+    <input type="submit" value="Remove Instrument" />
+</form>
+
+
+</body>
+</html>

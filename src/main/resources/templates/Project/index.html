@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head">
+</head>
+
+<body class="container">
+
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${projects} and ${projects.size()}">You haven't added any projects yet</p>
+
+<ul>
+    <li th:each="project: ${projects}" th:text="${project.name}"></li>
+</ul>
+
+<a th:href="@{'/project/add/'}">Add Research Project</a>
+
+</body>
+</html>

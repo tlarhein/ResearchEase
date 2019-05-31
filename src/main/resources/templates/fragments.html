@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org/ ">
+
+<head th:fragment="head">
+    <meta charset="UTF=8"/>
+    <title th:text="${title}">My Research</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<nav th:fragment="navigation">
+    <a href="/user">User</a> |
+    <a href="/project">Project</a> |
+    <a href="/Instrument">Instrument</a> |
+    <a href="/response">Responses</a>
+</nav>
+
+<nav th:fragment="researchNavigation">
+    <a href="/instrument/add">Add</a> |
+    <a href="/instrument/remove">Remove</a>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${responses} and ${responses.size()}">No responses collected yet</p>
+
+<ul>
+    <li th:each="response : ${responses}">
+        <a th:href="@{'/response/view/' + ${response.id}}" th:text="${response.name}"></a>
+    </li>
+</ul>
+
+<a th:href="@{'/response/add'}">Add Responses</a>
+
+
+</body>
+</html>

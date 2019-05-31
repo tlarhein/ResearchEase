@@ -1,37 +1,45 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.1.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion = '1.5.1.RELEASE'}}"
-		)
-	}
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.19.RELEASE'
 
-	apply plugin: 'org.springframework.boot'
-	apply plugin: 'java'
-	apply plugin: 'eclipse'
+    }
 
 }
+
+plugins {
+    id 'java'
+}
+
+
+apply plugin: 'org.springframework.boot'
+
+
 jar {
-	baseName = 'research-ease'
-	version = '0.0.1-SNAPSHOT'
+    baseName = 'research-ease'
+    version = '0.0.1-SNAPSHOT'
 }
-sourceCompatibility = 1.8
+
+
 group = 'org.launchcode'
-	
+sourceCompatibility = '1.8'
+
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
-	runtime('org.springframework.boot:spring-boot-devtools')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-    }
-	
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('mysql:mysql-connector-java')
+    runtime('org.springframework.boot:spring-boot-devtools')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+bootRun{
+    addResources = true
+}
